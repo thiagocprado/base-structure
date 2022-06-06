@@ -1,0 +1,51 @@
+{
+  "name": "base-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon --ignore /client/ index.js",
+    "migrate": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all",
+    "client": "cd client && yarn start",
+    "project": "yarn client | yarn dev",
+    "first-install": "cp .env client/.env && yarn install && cd client && yarn install && cd .. && yarn migrate && yarn seed",
+    "serve": "yarn first-install && cd client && yarn build && cd .. && yarn start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.948.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "codebit-express-fileupload": "^1.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.16.3",
+    "joi": "^17.4.1",
+    "joi-translation-pt-br": "^0.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mysql2": "^1.5.3",
+    "nodemailer": "^6.6.3",
+    "react-moment": "^1.1.1",
+    "sequelize": "^4.37.10",
+    "slugify": "^1.6.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4",
+    "nodemon": "^2.0.9",
+    "prettier": "^2.3.0",
+    "sequelize-cli": "^4.0.0"
+  }
+}
